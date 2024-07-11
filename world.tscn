@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://i6drjnr2cujs"]
+[gd_scene load_steps=10 format=3 uid="uid://i6drjnr2cujs"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_qnenm"]
+[ext_resource type="Script" path="res://cameraFollow.gd" id="2_mgugx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2seoe"]
 albedo_color = Color(0, 0.12549, 1, 1)
@@ -38,10 +39,12 @@ shape = SubResource("ConcavePolygonShape3D_lkfgs")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.66904, 0)
 script = ExtResource("1_qnenm")
 
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D" node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 0.968191, 0.250211, 0, -0.250211, 0.968191, 0, 0.727536, 2.066)
 environment = SubResource("Environment_03w2c")
 fov = 94.53
+script = ExtResource("2_mgugx")
+player = NodePath("..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("BoxShape3D_b40mn")
