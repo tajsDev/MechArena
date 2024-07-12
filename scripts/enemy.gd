@@ -1,1 +1,3 @@
-extends Object
+extends CharacterBody3D
+
+
